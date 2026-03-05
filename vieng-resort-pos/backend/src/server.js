@@ -16,7 +16,7 @@ const JWT_SECRET = process.env.JWT_SECRET || 'fallback-pos-secret';
 app.use(cors());
 app.use(express.json({ limit: '2mb' }));
 
-const frontendDist = process.env.FRONTEND_DIST_PATH || path.join(__dirname, '..', '..', 'frontend', 'dist');
+const frontendDist = path.resolve(process.env.FRONTEND_DIST_PATH || path.join(__dirname, '..', '..', 'frontend', 'dist'));
 app.use(express.static(frontendDist));
 
 const uploadsDir = path.join(__dirname, '..', 'data', 'uploads');
