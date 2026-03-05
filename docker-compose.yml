@@ -1,0 +1,15 @@
+services:
+  app:
+    build: .
+    container_name: vieng-resort
+    restart: unless-stopped
+    ports:
+      - "4000:4000"
+    volumes:
+      - app-data:/app/data
+    environment:
+      - PORT=4000
+      - DATABASE_PATH=./data/app.sqlite
+
+volumes:
+  app-data:

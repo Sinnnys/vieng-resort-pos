@@ -1,0 +1,14 @@
+services:
+  pos:
+    build: .
+    container_name: vieng-pos
+    restart: unless-stopped
+    ports:
+      - "4001:4001"
+    environment:
+      - JWT_SECRET=vieng-pos-secret-k3y-2026
+    volumes:
+      - pos-data:/app/data
+
+volumes:
+  pos-data:
