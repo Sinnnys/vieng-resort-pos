@@ -1,6 +1,6 @@
 services:
   pos:
-    build: .
+    image: ghcr.io/sinnnys/vieng-resort-pos:latest
     container_name: vieng-pos
     restart: unless-stopped
     ports:
